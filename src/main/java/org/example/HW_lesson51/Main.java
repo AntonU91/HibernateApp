@@ -52,13 +52,15 @@ public class Main {
 //            director.addMovie(movie);
             //
             // 6. Удалите фильм у любого режиссера.
-            Director director = session.get(Director.class, 1);
-            Movie movie = session.get(Movie.class, 1);
-            director.deleteMovie(movie);
-            session.delete(movie);
+//            Director director = session.get(Director.class, 1);
+//            Movie movie = session.get(Movie.class, 1);
+//            director.deleteMovie(movie);
+//            session.delete(movie);
             // 7. Сделать комит проекта и отработать пример с каскадированием
-
-
+            Director director = new Director("Aleksey Balabanov", 55);
+            director.addMovie( new Movie("Zhmurki", 2001));
+            director.addMovie(new Movie("Brother", 1997));
+            session.save(director);
 
 
 

@@ -1,5 +1,7 @@
 package org.example.HW_lesson51.models;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,7 @@ public class Director {
     }
 
     @OneToMany(mappedBy = "movieDirector")
+    @Cascade(value = {org.hibernate.annotations.CascadeType.SAVE_UPDATE})
     private List<Movie> movieList;
 
     public List<Movie> getMovieList() {
