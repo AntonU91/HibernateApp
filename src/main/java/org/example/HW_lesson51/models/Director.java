@@ -28,7 +28,7 @@ public class Director {
         this.age = age;
     }
 
-    @OneToMany(mappedBy = "movieDirector")
+    @OneToMany(mappedBy = "movieDirector", fetch = FetchType.LAZY) // todo came back after practice Lazy loading
     @Cascade(value = {org.hibernate.annotations.CascadeType.SAVE_UPDATE})
     private List<Movie> movieList;
 
